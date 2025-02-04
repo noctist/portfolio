@@ -1,0 +1,69 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "ibm-bold";
+    src: url(/fonts/IBMPlexSans-Bold.ttf);
+}
+
+@font-face {
+    font-family: "ibm-regular";
+    src: url(/fonts/IBMPlexSans-Regular.ttf);
+}
+
+:root {
+    font-family: "ibm-bold";
+    font-size: 1em;
+    --color1: #272946;
+    --color2: #aaea6c;
+    --color3: #e7ffee;
+    --color4: #3f416c;
+}
+
+body,
+html {
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color1);
+}
+
+.controls-message {
+    position:fixed;
+    color: var(--color1);
+    top: 3vh;
+    left: 5vw;
+    opacity: 0.4;
+    font-size: 1.2rem;
+    max-width: 40vw;
+    user-select: none;
+}
+
+.camera-controller {
+    display: flex;
+    position: fixed;
+    top: 5vh;
+    right: 5vw;
+    gap: 1vh;
+}
+
+.camera-controller-btn {
+    color: var(--color2);
+    background-color: var(--color1);
+    border: var(--color1);
+    border-style: solid;
+    border-radius: 12px;
+    font-size: 2rem;
+    width: 12vw;
+    opacity: 0.4;
+}
+
+.camera-controller-btn:active {
+    opacity: 1;
+}
+
