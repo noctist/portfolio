@@ -1,13 +1,20 @@
 [
   {
-    "pos": { "x": 500, "y": 250 },
+    "pos": { "x": 400, "y": 250 },
+    "name": "Resume",
+    "description": "Would you like to download a copy of my most recent resume?",
+    "link": "/public/documents/Lakdawala_Zohran_Resume.pdf",
+    "logoData": { "name": "resume-logo", "width": 228.6, "height": 179.5 }
+  },
+  {
+    "pos": { "x": 600, "y": 250 },
     "name": "GitHub",
     "description": "GitHub is where I host my projects.",
     "link": "https://github.com/noctist",
     "logoData": { "name": "github-logo", "width": 228.6, "height": 179.5 }
   },
   {
-    "pos": { "x": 700, "y": 250 },
+    "pos": { "x": 800, "y": 250 },
     "name": "LinkedIn",
     "description": "Here is where you can connect with me professionally.",
     "link": "https://linkedin.com/in/zohranl",
@@ -18,7 +25,7 @@
     }
   },
   {
-    "pos": { "x": 900, "y": 250 },
+    "pos": { "x": 1000, "y": 250 },
     "name": "Email",
     "address": "zohranlakdawala@gmail.com",
     "logoData": {

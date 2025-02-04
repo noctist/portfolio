@@ -2,6 +2,7 @@ import { DIAGONAL_FACTOR } from "../constants";
 import {
   isEmailModalVisibleAtom,
   isProjectModalVisibleAtom,
+  isResumeModalVisibleAtom,
   isSocialModalVisibleAtom,
   store,
 } from "../store";
@@ -52,6 +53,7 @@ export default function makePlayer(k, posVec2, speed) {
 
     if (
       store.get(isSocialModalVisibleAtom) ||
+      store.get(isResumeModalVisibleAtom) ||
       store.get(isEmailModalVisibleAtom) ||
       store.get(isProjectModalVisibleAtom)
     ) 

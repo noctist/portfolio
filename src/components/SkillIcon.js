@@ -17,7 +17,7 @@ export default function makeSkillIcon(k, parent, posVec2, imageData, subtitle) {
   skillIcon.use(k.body());
 
   skillIcon.onCollide("player", (player) => {
-    skillIcon.applyImpulse(player.direction.scale(150));
+    skillIcon.applyImpulse(player.direction.scale(250));
   });
 
   opacityTrickleDown(parent, [subtitleText]);

@@ -4,6 +4,8 @@ export const isSocialModalVisibleAtom = atom(false);
 export const selectedLinkAtom = atom(null);
 export const selectedLinkDescriptionAtom = atom("");
 
+export const isResumeModalVisibleAtom = atom(false);
+
 export const isEmailModalVisibleAtom = atom(false);
 export const emailAtom = atom("");
 

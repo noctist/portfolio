@@ -9,6 +9,7 @@ import { makeAppear } from "./utils";
 import makeSkillIcon from "./components/SkillIcon";
 import makeWorkExperienceCard from "./components/WorkExperienceCard";
 import makeProjectCard from "./components/ProjectCard";
+import makeResumeIcon from "./components/ResumeIcon";
 
 export default async function initGame() {
   const generalData = await (await fetch("./configs/generalData.json")).json();
@@ -46,6 +47,7 @@ export default async function initGame() {
   });
   k.loadFont("ibm-regular", "./fonts/IBMPlexSans-Regular.ttf");
   k.loadFont("ibm-bold", "./fonts/IBMPlexSans-Bold.ttf");
+  k.loadSprite("resume-logo", "./logos/resume-logo.png");
   k.loadSprite("github-logo", "./logos/github-logo.png");
   k.loadSprite("linkedin-logo", "./logos/linkedin-logo.png");
   k.loadSprite("youtube-logo", "./logos/youtube-logo.png");
@@ -55,9 +57,10 @@ export default async function initGame() {
   k.loadSprite("typescript-logo", "./logos/ts-logo.png");
   k.loadSprite("react-logo", "./logos/react-logo.png");
   k.loadSprite("nextjs-logo", "./logos/nextjs-logo.png");
-  k.loadSprite("postgres-logo", "./logos/postgres-logo.png");
+  k.loadSprite("snowflake-logo", "./logos/snowflake-logo.png");
   k.loadSprite("html-logo", "./logos/html-logo.png");
   k.loadSprite("css-logo", "./logos/css-logo.png");
+  k.loadSprite("c-sharp-logo", "./logos/c-sharp-logo.png");
   k.loadSprite("tailwind-logo", "./logos/tailwind-logo.png");
   k.loadSprite("python-logo", "./logos/python-logo.png");
   k.loadSprite("email-logo", "./logos/email-logo.png");
@@ -109,14 +112,14 @@ export default async function initGame() {
       container.add([
         k.text(generalData.header.title, { font: "ibm-bold", size: 48 }),
         k.color(k.Color.fromHex(PALETTE.color1)),
-        k.pos(525, 0),
+        k.pos(550, 0),
         k.opacity(0),
       ]);
 
       container.add([
         k.text(generalData.header.subtitle, { font: "ibm-bold", size: 38 }),
         k.color(k.Color.fromHex(PALETTE.color1)),
-        k.pos(550, 55),
+        k.pos(550, 75),
         k.opacity(0),
       ]);
 
@@ -130,9 +133,21 @@ export default async function initGame() {
             k.vec2(socialData.pos.x, socialData.pos.y),
             socialData.logoData,
             socialData.name,
-            socialData.email
+            socialData.address
           );
           continue;
+        }
+        if (socialData.name === "Resume") {
+            makeResumeIcon(
+                k,
+                socialContainer,
+                k.vec2(socialData.pos.x, socialData.pos.y),
+                socialData.logoData,
+                socialData.name,
+                socialData.link,
+                socialData.description
+            );
+            continue;
         }
         makeSocialIcon(
           k,
@@ -189,24 +204,24 @@ export default async function initGame() {
     }
   );
 
-  makeSection(
-    k,
-    k.vec2(k.center().x, k.center().y + 400),
-    generalData.projSectionName,
-    (parent) => {
-      const container = parent.add([k.opacity(0, k.pos(0))]);
-      for (const projectData of projectsData) {
-        makeProjectCard(
-            k,
-            container,
-            k.vec2(projectData.pos.x, projectData.pos.y),
-            projectData.data,
-            projectData.thumbnail
-        );
-      }
-      makeAppear(k, container);
-    }
-  );
+  //   makeSection(
+  //     k,
+  //     k.vec2(k.center().x, k.center().y + 400),
+  //     generalData.projSectionName,
+  //     (parent) => {
+  //       const container = parent.add([k.opacity(0, k.pos(0))]);
+  //       for (const projectData of projectsData) {
+  //         makeProjectCard(
+  //             k,
+  //             container,
+  //             k.vec2(projectData.pos.x, projectData.pos.y),
+  //             projectData.data,
+  //             projectData.thumbnail
+  //         );
+  //       }
+  //       makeAppear(k, container);
+  //     }
+  //   );
 
   makePlayer(k, k.vec2(k.center()), 700);
 }
