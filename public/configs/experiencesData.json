@@ -4,10 +4,10 @@
     "cardHeight": 250,
     "roleData": {
       "title": "Software Engineer III",
-      "description": "Enhanced [\\REDACTED\\]'s interactive design platform by building and optimizing prototyping tools, empowering designers to create high-fidelity experiences and bridging the gap between design and development.",
+      "description": "Engineered intricate data visualization and analysis tools using full-stack technologies, coordinated automation in data delivery, and enhanced security with advanced SQL structures.",
       "company": {
-        "name": "Circana",
-        "startDate": "2024",
+        "name": "Circana - Port Washington, NY",
+        "startDate": "2019",
         "endDate": "Present"
       }
     }
@@ -16,12 +16,25 @@
     "pos": { "x": 150, "y": 180 },
     "cardHeight": 250,
     "roleData": {
-      "title": "Product Software Engineer",
-      "description": "Improved [\\REDACTED]'s real-time design collaboration tool by developing new components and refining existing features, enhancing workflow efficiency and creativity for design teams worldwide.",
+      "title": "Front-end Engineer",
+      "description": "Provided institutions with software to connect holistically with students enhancing their experience and streamline campus operations and collaborations.",
       "company": {
-        "name": "[\\REDACTED]",
-        "startDate": "2021",
-        "endDate": "2023"
+        "name": "Symplicity Corporation - Arlington, VA",
+        "startDate": "2015",
+        "endDate": "2019"
+      }
+    }
+  },
+  {
+    "pos": { "x": 150, "y": 460 },
+    "cardHeight": 250,
+    "roleData": {
+      "title": "Web Developer",
+      "description": "Orchestrated necessary software and engineering needs for Rochester Institute of Technologies Business College’s Students and Faculty.",
+      "company": {
+        "name": "Saunders College of Business - Rochester, NY",
+        "startDate": "2014",
+        "endDate": "2015"
       }
     }
   }

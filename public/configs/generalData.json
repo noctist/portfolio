@@ -1,10 +1,10 @@
 {
   "header": {
-    "title": "Hi, I'm JSLegendDev!",
-    "subtitle": "A creative software developer"
+    "title": "Hi, I'm Zohran Lakdawala!",
+    "subtitle": "An imaginative software developer"
   },
-  "section1Name": "About",
-  "section2Name": "Skills",
-  "section3Name": "Work Experience",
-  "section4Name": "Projects"
+  "abtSectionName": "About",
+  "skillSectionName": "Skills",
+  "expSectionName": "Work Experience",
+  "projSectionName": "Projects"
 }

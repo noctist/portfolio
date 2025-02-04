@@ -1,9 +1,26 @@
+import makeSection from "./components/Section";
+import makeEmailIcon from "./components/EmailIcon";
+import makeSocialIcon from "./components/SocialIcon";
 import { PALETTE } from "./constants";
 import makePlayer from "./entities/Player";
 import makeKaplayCtx from "./kaplayCtx";
 import { cameraZoomValueAtom, store } from "./store";
+import { makeAppear } from "./utils";
+import makeSkillIcon from "./components/SkillIcon";
+import makeWorkExperienceCard from "./components/WorkExperienceCard";
+import makeProjectCard from "./components/ProjectCard";
 
 export default async function initGame() {
+  const generalData = await (await fetch("./configs/generalData.json")).json();
+  const socialsData = await (await fetch("./configs/socialsData.json")).json();
+  const skillsData = await (await fetch("./configs/skillsData.json")).json();
+  const experiencesData = await (
+    await fetch("./configs/experiencesData.json")
+  ).json();
+  const projectsData = await (
+    await fetch("./configs/projectsData.json")
+  ).json();
+
   const k = makeKaplayCtx();
   k.loadSprite("player", "./sprites/player.png", {
     sliceX: 4,
@@ -57,9 +74,9 @@ export default async function initGame() {
     k.setCamScale(k.vec2(0.8));
   }
 
-  k.onUpdate(()=> {
+  k.onUpdate(() => {
     const camZoomValue = store.get(cameraZoomValueAtom);
-    if(camZoomValue !== k.getCamScale()) k.setCamScale(k.vec2(camZoomValue));
+    if (camZoomValue !== k.getCamScale()) k.setCamScale(k.vec2(camZoomValue));
   });
 
   const tiledBackground = k.add([
@@ -81,6 +98,115 @@ export default async function initGame() {
     tiledBackground.height = k.height();
     tiledBackground.uniform.u_aspect = k.width() / k.height();
   });
+
+  makeSection(
+    k,
+    k.vec2(k.center().x, k.center().y - 400),
+    generalData.abtSectionName,
+    (parent) => {
+      const container = parent.add([k.pos(-805, -700), k.opacity(0)]);
+
+      container.add([
+        k.text(generalData.header.title, { font: "ibm-bold", size: 48 }),
+        k.color(k.Color.fromHex(PALETTE.color1)),
+        k.pos(525, 0),
+        k.opacity(0),
+      ]);
+
+      container.add([
+        k.text(generalData.header.subtitle, { font: "ibm-bold", size: 38 }),
+        k.color(k.Color.fromHex(PALETTE.color1)),
+        k.pos(550, 55),
+        k.opacity(0),
+      ]);
+
+      const socialContainer = container.add([k.pos(130, 0), k.opacity(0)]);
+      for (const socialData of socialsData) {
+        console.log(socialData);
+        if (socialData.name === "Email") {
+          makeEmailIcon(
+            k,
+            socialContainer,
+            k.vec2(socialData.pos.x, socialData.pos.y),
+            socialData.logoData,
+            socialData.name,
+            socialData.email
+          );
+          continue;
+        }
+        makeSocialIcon(
+          k,
+          socialContainer,
+          k.vec2(socialData.pos.x, socialData.pos.y),
+          socialData.logoData,
+          socialData.name,
+          socialData.link,
+          socialData.description
+        );
+      }
+      makeAppear(k, container);
+      makeAppear(k, socialContainer);
+    }
+  );
+
+  makeSection(
+    k,
+    k.vec2(k.center().x - 400, k.center().y),
+    generalData.skillSectionName,
+    (parent) => {
+      const container = parent.add([k.opacity(0), k.pos(-300, 0)]);
+      for (const skillData of skillsData) {
+        makeSkillIcon(
+          k,
+          container,
+          k.vec2(skillData.pos.x, skillData.pos.y),
+          skillData.logoData,
+          skillData.name
+        );
+        continue;
+      }
+
+      makeAppear(k, container);
+    }
+  );
+
+  makeSection(
+    k,
+    k.vec2(k.center().x + 400, k.center().y),
+    generalData.expSectionName,
+    (parent) => {
+      const container = parent.add([k.opacity(0), k.pos(0)]);
+      for (const experienceData of experiencesData) {
+        makeWorkExperienceCard(
+          k,
+          container,
+          k.vec2(experienceData.pos.x, experienceData.pos.y),
+          experienceData.cardHeight,
+          experienceData.roleData
+        );
+      }
+      makeAppear(k, container);
+    }
+  );
+
+  makeSection(
+    k,
+    k.vec2(k.center().x, k.center().y + 400),
+    generalData.projSectionName,
+    (parent) => {
+      const container = parent.add([k.opacity(0, k.pos(0))]);
+      for (const projectData of projectsData) {
+        makeProjectCard(
+            k,
+            container,
+            k.vec2(projectData.pos.x, projectData.pos.y),
+            projectData.data,
+            projectData.thumbnail
+        );
+      }
+      makeAppear(k, container);
+    }
+  );
 
   makePlayer(k, k.vec2(k.center()), 700);
 }

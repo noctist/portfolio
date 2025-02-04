@@ -8,7 +8,7 @@ import {
 
 export default function makePlayer(k, posVec2, speed) {
   const player = k.add([
-    k.sprite("player", { anim: "walk-down-idle" }),
+    k.sprite("player", { anim: "walk-down" }),
     k.scale(8),
     k.anchor("center"),
     k.area({ shape: new k.Rect(k.vec2(0), 5, 10) }),
@@ -45,7 +45,7 @@ export default function makePlayer(k, posVec2, speed) {
         k.getCamPos(),
         player.pos,
         0.2,
-        (newPos) => k.getCamPos(newPos),
+        (newPos) => k.setCamPos(newPos),
         k.easings.linear
       );
     }
