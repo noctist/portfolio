@@ -12,7 +12,7 @@ export default function ReactUI() {
         <SocialModal />
         <ResumeModal />
         <EmailModal />
-        <ProjectModal />
+        {/* <ProjectModal /> */}
     </>
     )
 }
