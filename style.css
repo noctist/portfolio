@@ -24,6 +24,8 @@
     --color5: #800080;
     --color6: #d896ff;
     --color7: #efbbff;
+    --color8: #99919c;
+    --color9: #dfd9d9;
 }
 
 body,
@@ -48,7 +50,7 @@ html {
 }
 
 .modal-content {
-    background-color: var(--color5);
+    background-color: var(--color8);
     border-color: var(--color1);
     border-style: solid;
     margin: 15% auto;
@@ -70,9 +72,9 @@ html {
     min-height: 5vh;
     max-height: 10vh;
     background-color: var(--color1);
-    border-color: var(--color5);
+    border-color: var(--color3);
     border-radius: 5px;
-    color: var(--color5);
+    color: var(--color3);
     border: none;
 }
 
@@ -112,7 +114,7 @@ p {
 }
 
 .camera-controller-btn {
-    color: var(--color2);
+    color: var(--color6);
     background-color: var(--color1);
     border: var(--color1);
     border-style: solid;
