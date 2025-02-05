@@ -12,8 +12,8 @@ importers:
         specifier: ^2.11.3
         version: 2.11.3(@types/react@18.3.18)(react@18.3.1)
       kaplay:
-        specifier: '3001'
-        version: 3001.0.9
+        specifier: github:kaplayjs/kaplay#ac9f28cc9f51700a2377eeb1cbd76abb5c481fcf
+        version: https://codeload.github.com/kaplayjs/kaplay/tar.gz/ac9f28cc9f51700a2377eeb1cbd76abb5c481fcf
       react:
         specifier: ^18.3.1
         version: 18.3.1
@@ -1015,8 +1015,9 @@ packages:
     resolution: {integrity: sha512-ZZow9HBI5O6EPgSJLUb8n2NKgmVWTwCvHGwFuJlMjvLFqlGG6pjirPhtdsseaLZjSibD8eegzmYpUZwoIlj2cQ==}
     engines: {node: '>=4.0'}
 
-  kaplay@3001.0.9:
-    resolution: {integrity: sha512-oGLTLOja+rGW4dvUOKsg4VO9FOYC+Z3O4nlwhxd0dMMTapOVoOkcpxqow8TJny3P5bukGay3ielmBGmDBYzUYA==}
+  kaplay@https://codeload.github.com/kaplayjs/kaplay/tar.gz/ac9f28cc9f51700a2377eeb1cbd76abb5c481fcf:
+    resolution: {tarball: https://codeload.github.com/kaplayjs/kaplay/tar.gz/ac9f28cc9f51700a2377eeb1cbd76abb5c481fcf}
+    version: 4000.0.0-alpha.15
 
   keyv@4.5.4:
     resolution: {integrity: sha512-oxVHkHR/EJf2CNXnWxRLW6mg7JyCCUcG0DtEGmL2ctUo1PNTin1PUil+r/+4r5MpVgC/fn1kjsx7mjSujKqIpw==}
@@ -2419,7 +2420,7 @@ snapshots:
       object.assign: 4.1.7
       object.values: 1.2.1
 
-  kaplay@3001.0.9: {}
+  kaplay@https://codeload.github.com/kaplayjs/kaplay/tar.gz/ac9f28cc9f51700a2377eeb1cbd76abb5c481fcf: {}
 
   keyv@4.5.4:
     dependencies:

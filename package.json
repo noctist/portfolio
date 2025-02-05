@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "jotai": "^2.11.3",
-    "kaplay": "3001",
+    "kaplay": "github:kaplayjs/kaplay#ac9f28cc9f51700a2377eeb1cbd76abb5c481fcf",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },

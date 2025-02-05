@@ -45,6 +45,28 @@ export default async function initGame() {
       "walk-right-down-idle": 28,
     },
   });
+  // k.loadSprite("player2", "./sprites/player2.png", {
+  //   sliceX: 8,
+  //   sliceY: 3,
+  //   anims: {
+  //     "walk-down-idle": 12,
+  //     "walk-down": { frames:[4,12,20],from: null, to: null, loop: true },
+  //     "walk-left-down": { frames:[5,13,21],from: null, to: null, loop: true },
+  //     "walk-left-down-idle": 13,
+  //     "walk-left": { frames:[6,14,22], from: null, to: null, loop: true },
+  //     "walk-left-idle": 14,
+  //     "walk-left-up": { frames:[7,15,23],from: null, to: null, loop: true },
+  //     "walk-left-up-idle": 15,
+  //     "walk-up": { frames:[0,8,16],from: null, to: null, loop: true },
+  //     "walk-up-idle": 8,
+  //     "walk-right-up": { frames:[1,9,17],from: null, to: null, loop: true },
+  //     "walk-right-up-idle": 9,
+  //     "walk-right": { frames:[2,10,18],from: null, to: null, loop: true },
+  //     "walk-right-idle": 10,
+  //     "walk-right-down": { frames:[3,11,19],from: null, to: null, loop: true },
+  //     "walk-right-down-idle": 11,
+  //   },
+  // });
   k.loadFont("ibm-regular", "./fonts/IBMPlexSans-Regular.ttf");
   k.loadFont("ibm-bold", "./fonts/IBMPlexSans-Bold.ttf");
   k.loadSprite("resume-logo", "./logos/resume-logo.png");
@@ -125,7 +147,6 @@ export default async function initGame() {
 
       const socialContainer = container.add([k.pos(130, 0), k.opacity(0)]);
       for (const socialData of socialsData) {
-        console.log(socialData);
         if (socialData.name === "Email") {
           makeEmailIcon(
             k,
