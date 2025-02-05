@@ -204,24 +204,24 @@ export default async function initGame() {
     }
   );
 
-    makeSection(
-      k,
-      k.vec2(k.center().x, k.center().y + 400),
-      generalData.projSectionName,
-      (parent) => {
-        const container = parent.add([k.opacity(0, k.pos(0))]);
-        for (const projectData of projectsData) {
-          makeProjectCard(
-              k,
-              container,
-              k.vec2(projectData.pos.x, projectData.pos.y),
-              projectData.data,
-              projectData.thumbnail
-          );
-        }
-        makeAppear(k, container);
-      }
-    );
+    // makeSection(
+    //   k,
+    //   k.vec2(k.center().x, k.center().y + 400),
+    //   generalData.projSectionName,
+    //   (parent) => {
+    //     const container = parent.add([k.opacity(0, k.pos(0))]);
+    //     for (const projectData of projectsData) {
+    //       makeProjectCard(
+    //           k,
+    //           container,
+    //           k.vec2(projectData.pos.x, projectData.pos.y),
+    //           projectData.data,
+    //           projectData.thumbnail
+    //       );
+    //     }
+    //     makeAppear(k, container);
+    //   }
+    // );
 
   makePlayer(k, k.vec2(k.center()), 700);
 }
