@@ -7,7 +7,7 @@ import ResumeModal from "./reactComponents/ResumeModal";
 export default function ReactUI() {
     return (
     <>
-        <p className="controls-message">Tap/Click around to move</p>
+        <p className="controls-message">Hold a direction to move</p>
         <CameraController />
         <SocialModal />
         <ResumeModal />
